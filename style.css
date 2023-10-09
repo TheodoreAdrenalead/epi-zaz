@@ -1,0 +1,29 @@
+div{
+    background-color: yellow; 
+    margin: 0.5%;
+    height : 15rem;
+    width : 100%;
+}
+
+section{
+    display : flex;
+    overflow: scroll;
+    flex-wrap: wrap;
+    height : 45rem;     
+    margin-bottom: 0.5vh;        
+}
+
+@media (min-width : 768px) and (max-width : 1024px) {
+        
+    div{
+        width : 49%;
+    }
+    
+}
+@media (min-width :1025px) {
+  
+    div{
+        width : 32%;
+    }
+
+}
