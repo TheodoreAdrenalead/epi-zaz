@@ -1,5 +1,5 @@
 function LearnMore() {
-    var x = document.getElementsByClass"description");
+    var x = document.getElementById("description");
     if (x.style.display === "none") {
         x.style.display = "block";
     } else {
