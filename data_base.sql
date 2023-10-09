@@ -19,6 +19,7 @@ CREATE TABLE companies (
 
 CREATE TABLE people (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    status VARCHAR(255),
     lastName VARCHAR(255),
     firstName VARCHAR(255),
     tel VARCHAR(255),
