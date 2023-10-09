@@ -18,7 +18,7 @@
 <body>
     <section>
 
-        <div class="job_list">
+        <div class="job_list" name="job1">
 
             <h4 class="job_title">first job</h4>
 
@@ -26,13 +26,17 @@
 
             <p>description...</p>
 
-            <button class="learn_more_button">Learn more</button>
+            <button onclick=LearnMore(this)>Learn More</button>
+
+            <div ID="description" style="display:none">
+            description details....
+            </div>
 
         </div>
 
     
 
-        <div class="job_list">
+        <div class="job_list" name="job3">
 
             <h4 class="job_title">second job</h4>
 
@@ -40,13 +44,17 @@
 
             <p>description...</p>
 
-            <button class="learn_more_button">Learn more</button>
+            <button onclick=LearnMore(this)>Learn More</button>
+
+            <div ID="description" style="display:none">
+            description details....
+            </div>
 
         </div>
 
     
 
-        <div class="job_list">
+        <div class="job_list" name="job4">
 
             <h4 class="job_title">third job</h4>
 
@@ -54,7 +62,7 @@
 
             <p>description...</p>
 
-            <button onclick=LearnMore()>Learn More</button>
+            <button onclick=LearnMore(this)>Learn More</button>
 
             <div ID="description" style="display:none">
             description details....
@@ -63,7 +71,7 @@
         </div>
         
 
-        <div class="job_list">
+        <div class="job_list" name="job5">
 
             <h4 class="job_title">fouth job</h4>
 
@@ -71,7 +79,11 @@
 
             <p>description...</p>
 
-            <button class="learn_more_button">Learn more</button>
+            <button onclick="LearnMore(this)">Learn More</button>
+
+            <div ID="description" style="display:none">
+            description details....
+            </div>
 
         </div>
 
@@ -82,3 +94,11 @@
 </body>
 
 </html>
+function LearnMore(this) {
+    var x = this.nextElementSibling
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+} 
