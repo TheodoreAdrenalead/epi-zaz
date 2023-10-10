@@ -2,6 +2,7 @@
 
 <html lang="en">
 
+
 <head>
 
     <meta charset="UTF-8">
@@ -15,10 +16,15 @@
 
 </head>
 
+<header>
+    <h1>Job Board</h1>
+    <button onclick = connect(this)>Connect</button>
+</header>
+
 <body>
     <section>
 
-        <div class="job_list" name="job1">
+        <div class="ad" name="job1">
 
             <h4 class="job_title">first job</h4>
 
@@ -30,13 +36,14 @@
 
             <div ID="description" style="display:none">
             description details....
+            <button onclick = applyJob(this)>Apply</button>
             </div>
 
         </div>
 
     
 
-        <div class="job_list" name="job3">
+        <div class="ad" name="job3">
 
             <h4 class="job_title">second job</h4>
 
@@ -48,13 +55,14 @@
 
             <div ID="description" style="display:none">
             description details....
+            <button onclick = applyJob(this)>Apply</button>
             </div>
 
         </div>
 
     
 
-        <div class="job_list" name="job4">
+        <div class="ad" name="job4">
 
             <h4 class="job_title">third job</h4>
 
@@ -66,12 +74,13 @@
 
             <div ID="description" style="display:none">
             description details....
+            <button onclick = applyJob(this)>Apply</button>
             </div>
         
         </div>
         
 
-        <div class="job_list" name="job5">
+        <div class="ad" name="job5">
 
             <h4 class="job_title">fouth job</h4>
 
@@ -83,6 +92,7 @@
 
             <div ID="description" style="display:none">
             description details....
+            <button onclick = applyJob(this)>Apply</button>
             </div>
 
         </div>
@@ -94,11 +104,3 @@
 </body>
 
 </html>
-function LearnMore(this) {
-    var x = this.nextElementSibling
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-} 

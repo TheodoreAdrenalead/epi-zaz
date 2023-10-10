@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" initial-scale=1.0>
+
+    <script src="script.js"></script>
+
+    <title>Connect Page</title>
+
+</head>
+
+<header>
+    <h1>Connect Page</h1>
+    <button onclick = connect(this)>Connect</button>
+</header>
+
+<body>
+    <section>
+        <form id = "connectForm" style="display:none">
+            <label for="email">Email (Required):</label>
+            <input type="text" id="email" name="email" required ><br>
+
+            <label for="mdp">Mot de passe (Required):</label>
+            <input type="text" id="mdp" name="mdp" required><br>
+
+            <button onclick = connect(this)>Connect</button>
+        </form>
+
+
+        <form id = "createForm" style="display:none">
+            <label for="firstName">First Name (Required):</label>
+            <input type="text" id="firstName" name="firstName" required ><br>
+
+            <label for="lastName">Last Name (Required):</label>
+            <input type="text" id="lastName" name="lastName" required ><br>
+
+            <input type="radio" id="candidat" name="status" value="candidat" checked>
+            <label for="candidat">candidat</label><br>
+            <input type="radio" id="" name="status" value="candidat" checked>
+            <label for="candidat">candidat</label><br>
+
+            <label for="tel">Téléphone (Required):</label>
+            <input type="text" id="tel" name="tel" required ><br>
+
+            <label for="email">Email (Required):</label>
+            <input type="text" id="email" name="email" required ><br>
+
+
+            <label for="mdp">Mot de passe (Required):</label>
+            <input type="text" id="mdp" name="mdp" required><br>
+
+            <button onclick = connect(this)>Connect</button>
+        </form>
+   
+    </section>
+   
+
+</body>
+
+</html>

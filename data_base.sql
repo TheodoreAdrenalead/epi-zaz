@@ -19,17 +19,22 @@ CREATE TABLE companies (
 
 CREATE TABLE people (
     id_people INT PRIMARY KEY AUTO_INCREMENT,
-    status VARCHAR(255),
     lastName VARCHAR(255),
     firstName VARCHAR(255),
+    status VARCHAR(255),
     tel VARCHAR(255),
-    email VARCHAR(255)
+    email VARCHAR(255),
+    mdp VARCHAR(255)
 );
 
 CREATE TABLE information (
     id_information INT PRIMARY KEY AUTO_INCREMENT,
     emailSent VARCHAR(255),
-    ad VARCHAR(255),
-    people VARCHAR(255),
-    companies VARCHAR(255)
+    SELECT advertisement ,
+    SELECT companies,
+    SELECT people,
 );
+
+
+INSERT INTO advertsement(title,shortDescription,,detailDescription) 
+VALUES ("Developpeur Fullstack","short Description","Detail description");

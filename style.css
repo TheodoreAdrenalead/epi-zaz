@@ -1,11 +1,12 @@
-div{
-    background-color: yellow; 
+.ad{
+    background-color: rgb(141, 141, 135); 
     margin: 0.5%;
     height : 15rem;
     width : 100%;
 }
 
 section{
+    background-color: aliceblue;
     display : flex;
     overflow: scroll;
     flex-wrap: wrap;
@@ -13,16 +14,18 @@ section{
     margin-bottom: 0.5vh;        
 }
 
+
+
 @media (min-width : 768px) and (max-width : 1024px) {
         
-    div{
+    .ad{
         width : 49%;
     }
     
 }
 @media (min-width :1025px) {
   
-    div{
+    .ad{
         width : 32%;
     }
 
