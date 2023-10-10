@@ -18,11 +18,12 @@
 
 <header>
     <h1>Connect Page</h1>
-    <button onclick = connect(this)>Connect</button>
+    <button onclick = homePage(this)>Home</button>
 </header>
 
 <body>
     <section>
+        <button onclick = connectForm(this)>Connect Account</button>
         <form id = "connectForm" style="display:none">
             <label for="email">Email (Required):</label>
             <input type="text" id="email" name="email" required ><br>
@@ -33,18 +34,20 @@
             <button onclick = connect(this)>Connect</button>
         </form>
 
-
+        <button onclick = createForm(this)> Your new <br>Create Account</button>
         <form id = "createForm" style="display:none">
             <label for="firstName">First Name (Required):</label>
             <input type="text" id="firstName" name="firstName" required ><br>
 
             <label for="lastName">Last Name (Required):</label>
             <input type="text" id="lastName" name="lastName" required ><br>
-
-            <input type="radio" id="candidat" name="status" value="candidat" checked>
-            <label for="candidat">candidat</label><br>
-            <input type="radio" id="" name="status" value="candidat" checked>
-            <label for="candidat">candidat</label><br>
+            
+            <label for="statu">Status : </label>
+            <select name="statu" id="statu">
+                <option value="candidat">Candidat</option>
+                <option value="entreprise">Entreprise</option>
+                <option value="admin">Administrateur</option>
+            </select><br>
 
             <label for="tel">Téléphone (Required):</label>
             <input type="text" id="tel" name="tel" required ><br>
@@ -53,10 +56,12 @@
             <input type="text" id="email" name="email" required ><br>
 
 
-            <label for="mdp">Mot de passe (Required):</label>
-            <input type="text" id="mdp" name="mdp" required><br>
+            <label for="mdp1">Mot de passe (Required):</label>
+            <input type="text" id="mdp1" name="mdp1" required><br>
+            <label for="mdp2"> Confirmer Mot de passe (Required):</label>
+            <input type="text" id="mdp2" name="mdp2" required><br>
 
-            <button onclick = connect(this)>Connect</button>
+            <button onclick = createAccount(this)>Create</button>
         </form>
    
     </section>
