@@ -17,11 +17,11 @@ CREATE TABLE companies (
     sector VARCHAR(255)
 );
 
-CREATE TABLE people (
+CREATE TABLE peoples (
     id_people INT PRIMARY KEY AUTO_INCREMENT,
     lastName VARCHAR(255),
     firstName VARCHAR(255),
-    status VARCHAR(255),
+    statu VARCHAR(255),
     tel VARCHAR(255),
     email VARCHAR(255),
     mdp VARCHAR(255)
@@ -29,12 +29,7 @@ CREATE TABLE people (
 
 CREATE TABLE information (
     id_information INT PRIMARY KEY AUTO_INCREMENT,
-    emailSent VARCHAR(255),
-    SELECT advertisement ,
-    SELECT companies,
-    SELECT people,
+    emailSent VARCHAR(255)    
 );
 
 
-INSERT INTO advertsement(title,shortDescription,,detailDescription) 
-VALUES ("Developpeur Fullstack","short Description","Detail description");

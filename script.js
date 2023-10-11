@@ -44,19 +44,56 @@ function connect(element) {
 
  
 } 
-function createAccount(element) {
+window.addEventListener("load", () => {
+    document.getElementById("create").addEventListener("click", function(event){
+        
+        event.preventDefault();
+        
+        createAccount();
+    });
+})
+
+function createAccount() {              
+    
    form = document.getElementById("createForm")
    firstName = form.firstName.value;
    lastName = form.lastName.value;
    statu = form.statu.value;
    tel = form.tel.value;
+   email = form.email.value;
    mdp1 = form.mdp1.value;
    mdp2=form.mdp2.value;
+   
    if(mdp1!=mdp2){
     alert("Mauvais mot de passe");
    }
    else{
     mdp = mdp1;
+    fetch("http://localhost:8000/people",{
+        method : "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            firstName: firstName,
+            lastName: lastName,
+            statu: statu,
+            tel: tel,
+            email: email,
+            mdp: mdp
+        })
+        })
+        .then(response => response.json())
+        .then(data => {
+        if (data === true) {
+            alert(`Compte créé avec succès \n Bienvenue ${firstName}`);
+        } 
+        else {
+            alert("Échec de la création du compte");
+        }
+    }).catch(error => {
+        console.log(error)
+    })
    }
 
  

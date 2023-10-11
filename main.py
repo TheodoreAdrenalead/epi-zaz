@@ -1,7 +1,18 @@
 from fastapi import FastAPI
 import mysql.connector
 
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 mydb = mysql.connector.connect(
 host="127.0.0.1",
@@ -10,9 +21,29 @@ password="chillflex",
 database="data_base"
 )
 
+
+
+class people(BaseModel):
+    firstName: str
+    lastName: str
+    statu: str
+    tel: str
+    email: str
+    mdp: str
+
+class advertisement(BaseModel):
+    title: str
+    shortDescription: str
+    detailDescription: str
+
+
+@app.get("/")
+async def main():
+    return {"message" : "hello"}
+
 # get line from table by id 
 @app.get("/tableLine")
-def get_table(table : str, id : int):
+async def get_table(table : str, id : int):
     cursor = mydb.cursor()
     cursor.execute(f"SELECT * FROM {table} WHERE id = {id}")
     result = cursor.fetchone()
@@ -20,30 +51,37 @@ def get_table(table : str, id : int):
 
 # # Delete an line from table by ID
 @app.delete("/tableLine")
-def delete_people(table :str, id: int):
+async def delete_people(table :str, id: int):
     cursor = mydb.cursor()
     cursor.execute(f"DELETE FROM {table} WHERE id = {id}")
     mydb.commit()
-    return {"message": "Employee deleted successfully"}
+    return {"message": "table deleted successfully"}
 
 
  # Add a new employee
 @app.post("/people")
-def add_people(firstName : str, lastName: str, status : str, tel : str, email : str ,mdp : str):
+async def add_people(people : people):
+   
     cursor = mydb.cursor()
-    sql = "INSERT INTO employees (firstName, lastName, status, tel, email, mdp) VALUES (%s, %s,%s,%s,%s)"
-    val = (firstName, lastName, status, tel, email, mdp)
-    cursor.execute(sql, val)
+    sql = "INSERT INTO peoples (firstName, lastName, statu, tel, email, mdp) VALUES (%s,%s,%s,%s,%s,%s)"
+    val = (people.firstName, people.lastName, people.statu, people.tel, people.email, people.mdp)
+    error = cursor.execute(sql, val)
     mydb.commit()
+    print(val)
+    print(error)
     return True
 
 
 # # Add a new advertisement
 @app.post("/advertisement")
-def add_people(title : str, shortDescription: str, detailDescription: str):
-   cursor = mydb.cursor()
-   sql = "INSERT INTO employees (title, shortDescription, detailDescription) VALUES (%s, %s, %s)"
-   val = (title, shortDescription, detailDescription)
-   cursor.execute(sql, val)
-   mydb.commit()
-   return True
+async def add_advertisement(ad: advertisement):
+    cursor = mydb.cursor()
+    sql = "INSERT INTO advertisement (title, shortDescription, detailDescription) VALUES (%s,%s,%s)"
+    val =  (ad.title, ad.shortDescription, ad.detailDescription)
+    try:
+        cursor.execute(sql, val)
+        mydb.commit()
+        return True
+    except Exception as e:
+        return str(e)  # Retourne l'erreur comme réponse pour le débogage
+
