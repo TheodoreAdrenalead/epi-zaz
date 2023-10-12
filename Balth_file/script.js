@@ -1,3 +1,12 @@
+//Permet d'exécuter
+window.addEventListener("load", () => {
+    document.getElementById("create").addEventListener("click", function(event){
+        event.preventDefault();        
+        createAccount();
+    });
+})
+
+//affiche une description détaillé d'une offre
 function LearnMore(element) {
     var x = element.nextElementSibling
     if (x.style.display === "none") {
@@ -7,10 +16,9 @@ function LearnMore(element) {
     }
 } 
 
+//Renvoie à la page de connection/création de compte
 function connectPage(){
-    // redirect connection page
-    window.location.href = "connectPage.html";
-   
+    window.location.href = "connectPage.html";   
 }
 
 function connectForm(){
@@ -44,14 +52,7 @@ function connect(element) {
 
  
 } 
-window.addEventListener("load", () => {
-    document.getElementById("create").addEventListener("click", function(event){
-        
-        event.preventDefault();
-        
-        createAccount();
-    });
-})
+
 
 function createAccount() {              
     
@@ -85,14 +86,12 @@ function createAccount() {
         })
         .then(response => response.json())
         .then(data => {
-        if (data === true) {
+        if (data === null) {
             alert(`Compte créé avec succès \n Bienvenue ${firstName}`);
         } 
         else {
-            alert("Échec de la création du compte");
+            alert("Échec de la création du compte \n erreur :",data);
         }
-    }).catch(error => {
-        console.log(error)
     })
    }
 
