@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" initial-scale=1.0>
+    
+    <script src="display_connectPage.js"></script>
+    <script src="script.js"></script>
+
+ 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> <!-- Include jQuery -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</head>
+
+<header class="container-fluid">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="index.html"> <h1>JobBoard</h2></a>
+        
+        <form class="d-flex" role="search">
+          <button id = "statuLog" class="btn btn-outline-success" type="submit"></button>
+
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<body>
+    <section id = "display_ad"></section>
+
+    
+  
+    <form id = "applyForm" style="display:none">
+      <!-- Email input -->
+      <div class="form-outline mb-4 text-center">
+        <label for="emailSent" style="display: flex;" class="justify-content-center">Ecriver un message à l'employeur</label>
+        <input type="text" id="emailSent" required>
+      </div>
+      <div class="text-center pt-1 mb-5 pb-1">
+        <button id="send">Envoyer</button>
+      </div>
+      <br>
+     
+    </form>
+    <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="myform bg-dark">
+              
+              <section class="row form form-100 gradient-form" style="background-color: rgb(42, 50, 151)">
+                <div class="container col-sm-12 card rounded-5 card-body p-lg-8 mw-md-6 text-black justify-content-center align-items-center h-10" style="height: 700px;">
+                  <div class="text-center">
+                    <h1 class="text-center">Welcome!</h1>
+                    <div><br><br><br><br></div>
+                    <form id = "applyForm" style="display:none">
+                      <!-- Email input -->
+                      <div class="form-outline mb-4 text-center">
+                        <label for="emailSent" style="display: flex;" class="justify-content-center">Ecriver un message à l'employeur</label>
+                        <input type="text" id="emailSent" required>
+                      </div>
+                      <div class="text-center pt-1 mb-5 pb-1">
+                        <button id="send">Envoyer</button>
+                      </div>
+                      <br>                     
+                    </form>
+                  </div>
+                </div>
+              </section>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+   
+</body>
+
+</html>
